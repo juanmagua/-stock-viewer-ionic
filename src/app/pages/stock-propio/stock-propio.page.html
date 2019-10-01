@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Stock Propio</ion-title>
+    <ion-buttons slot="start">
+        <ion-back-button defaultHref="/home" style="display:block;"></ion-back-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+        <ion-text>
+                <p>Talle  {{_producto.Talle}} - {{_producto.Nombre}}</p>
+            </ion-text>
+        
+
+    <ion-list>
+        <ion-item *ngFor="let stockP of stockPropio">
+            <dl>
+                <dt><strong>{{stockP.Deposito}}</strong></dt>
+                <dt>Cantidad: {{stockP.Cantidad}}</dt>
+            </dl>
+        </ion-item>
+    </ion-list>
+
+</ion-content>

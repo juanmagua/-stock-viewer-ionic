@@ -1,0 +1,182 @@
+<ion-header>
+  <ion-toolbar>
+  <ion-buttons slot="start">
+      <ion-button (click)="this.logout()">
+        <ion-icon slot="icon-only" name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+   <ion-title>
+      GuaDal Indumentaria
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+    <ion-grid>
+        <ion-row>
+          <ion-col>
+            <div>
+                <ion-list>
+                    <!--
+                    <ion-list-header>Filtros</ion-list-header>
+                    -->
+                    <ion-item>
+                      <!--
+                      <ion-label>Marca</ion-label>
+                      -->
+                      <ion-select  interface="action-sheet"  (ionChange)="onMarcaSelected()"  [(ngModel)]="marca" placeholder="Marcas" okText="Ok" cancelText="Cerrar">
+                        <ion-select-option *ngFor="let marca of marcas;let i=index" value="{{marca.Id}}">{{marca.Nombre}}</ion-select-option>
+                      </ion-select>
+                    </ion-item>
+                  
+                    <ion-item>
+                      <!--
+                      <ion-label>Categoria</ion-label>
+                      -->
+                      <ion-select  interface="action-sheet"  (ionChange)="onCategoriaSelected()"   [(ngModel)]="categoria" placeholder="Categorias" okText="Aceptar" cancelText="Cerrar">
+                          <ion-select-option *ngFor="let categoria of categorias;let i=index" value="{{categoria.Id}}">{{categoria.Nombre}}</ion-select-option>
+                      </ion-select>
+                    </ion-item>
+                    <!--
+                    <ion-item>
+                        <ion-label>Producto</ion-label>
+                        <ion-select  interface="action-sheet" [(ngModel)]="producto" placeholder="Productos" okText="Aceptar" cancelText="Cerrar">
+                            <ion-select-option cssClass="select-option-dinadel" *ngFor="let producto of productos;let i=index" value="{{producto.Id}}">{{producto.Nombre}}</ion-select-option>
+                        </ion-select>
+                    </ion-item>
+                      -->
+
+                    <ion-item>
+                      <ionic-selectable
+                        #productoComponent
+                        item-content
+                        cssClass="select-option-dinadel"
+                        modalCssClass="producto-modal"
+                        placeholder="Productos"
+                        searchPlaceholder="Ingrese Nombre del Producto o Codigo.."
+                        groupTextField="prd.name "
+                        [(ngModel)]="producto"
+                        itemValueField="Id"
+                        itemTextField="Nombre"
+                        [items]="productos"
+                        [canSearch]="true"
+                        [hasInfiniteScroll]="true"
+                        (onInfiniteScroll)="getMoreProductos($event)"
+                        (onChange)="productoChange($event)"
+                        (onSearch)="searchProductos($event)">
+                        <ng-template ionicSelectableCloseButtonTemplate>
+                            <ion-icon name="close-circle" style="font-size: 24px;"></ion-icon>
+                          </ng-template>
+                          <ng-template ionicSelectableTitleTemplate>
+                            Buscar Productos
+                          </ng-template>
+                          <ng-template ionicSelectableItemTemplate let-producto="item">
+                            Talle {{ producto.Talle }}  - ({{ producto.Nombre }}) - {{ producto.Id }}
+                          </ng-template>
+                          <ng-template ionicSelectableValueTemplate let-producto="value">
+                            Talle {{ producto.Talle }}  - ({{ producto.Nombre }}) - {{ producto.Id }} 
+                          </ng-template>
+                          <ng-template ionicSelectableSearchFailTemplate>
+                              <div padding>
+                                No hay productos para mostrar.
+                              </div>
+                            </ng-template>
+                      </ionic-selectable>
+                    </ion-item>
+                  
+                  
+                  </ion-list>
+
+                  <div padding>
+
+                      <ion-button expand="block" (click)="onFiltrar()" >
+                         Filtrar
+                      </ion-button>
+      
+
+                  </div>
+            </div>
+          </ion-col>
+        </ion-row>
+        <!-- Resultado -->
+        <ion-row style="padding-top: 10px;">
+            <ion-col size="6">
+                
+                <ion-item id="unidades-pedidas" (click)="onRedirect('/unidades-pedidas/')"> 
+                    <ion-label text-wrap>
+                      <ion-text >
+                        <h3>Unidades Pedidas</h3>
+                      </ion-text>
+                       <ion-text >
+                        <p>{{unidadesPedidas}}</p>
+                      </ion-text>
+                    </ion-label>
+                  </ion-item>
+
+            </ion-col>
+            <ion-col size="6">
+
+                <ion-item  id="stock-propio" (click)="onRedirect('/stock-propio/')"> 
+                  <ion-label text-wrap>
+                    <ion-text >
+                      <h3>Stock Propio</h3>
+                    </ion-text>
+                     <ion-text >
+                      <p>{{stockPropio}}</p>
+                    </ion-text>
+                  </ion-label>
+                </ion-item>
+
+
+            </ion-col> 
+            <ion-col size="6">
+
+                
+                <ion-item id="stock-transito" (click)="onRedirect('/stock-en-transito/')"> 
+                  <ion-label text-wrap>
+                    <ion-text >
+                      <h3>Stock Transito</h3>
+                    </ion-text>
+                     <ion-text >
+                      <p>{{stockTransito}}</p>
+                    </ion-text>
+                  </ion-label>
+                </ion-item>
+
+            </ion-col> 
+            <ion-col size="6">
+
+                <ion-item id="stock-corte" (click)="onRedirect('/stock-en-corte/')"> 
+                  <ion-label text-wrap>
+                    <ion-text >
+                      <h3>Stock En Corte</h3>
+                    </ion-text>
+                     <ion-text >
+                      <p>{{enCorte}}</p>
+                    </ion-text>
+                  </ion-label>
+                </ion-item>
+
+            </ion-col>  
+            <ion-col size="12">
+
+                <ion-item id="{{estadoStockClass}}"> 
+                  <ion-label text-wrap>
+                    <ion-text >
+                      <h3>Estado de Stock</h3>
+                    </ion-text>
+                     <ion-text >
+                      <p>{{estadoStock}}</p>
+                    </ion-text>
+                  </ion-label>
+                </ion-item>
+
+            </ion-col>    
+        </ion-row>
+        
+
+      </ion-grid>
+
+  
+</ion-content>

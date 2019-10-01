@@ -1,0 +1,37 @@
+<ion-header>
+
+   
+  <ion-toolbar>
+      
+    
+      <ion-title>Unidades Pedidas </ion-title>
+
+      <ion-buttons slot="start">
+            <ion-back-button defaultHref="/home" style="display:block;"></ion-back-button>
+          </ion-buttons>
+      
+
+  </ion-toolbar>
+   
+</ion-header>
+
+<ion-content padding>
+
+    <ion-text>
+        <p>Talle  {{_producto.Talle}} - {{_producto.Nombre}}</p>
+    </ion-text>
+
+   
+
+    <ion-list>
+        <ion-item *ngFor="let unidadaPerdida of unidadesPedidas">
+            <dl>
+                <dt><strong>{{unidadaPerdida.Cliente}}</strong></dt>
+                <dt>Fecha Pedido: {{unidadaPerdida.FechaPedido | date: "dd-MM-yyyy"}}</dt>
+                <dt>Cantidad Pedida: {{unidadaPerdida.CantidadPedida}}</dt>
+                <dt>Cantidad a Entregar: {{unidadaPerdida.CantidadEntregar}}</dt>
+            </dl>
+        </ion-item>
+    </ion-list>
+
+</ion-content>

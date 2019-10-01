@@ -1,0 +1,17 @@
+<ion-content padding>
+  <div class="" style="text-align: center">
+    <img src="../assets/img/logo.png" style="align-items: center; margin: auto; display: block;" >
+    <h1 style="color: #e2213a; font-weight: 900">¡Bienvenido!</h1>   
+  </div>
+  <form #form="ngForm" (ngSubmit)="login(form)" method="post" style="text-align: center">
+    <ion-item>
+      <ion-label position="floating">Usuario</ion-label>
+      <ion-input ngModel type="email" name="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input ngModel type="password" name="password"></ion-input>
+    </ion-item>
+    <ion-button id="my-button-native" class="my-button-native" style="background-color: #e2213a" type="submit" expand="full" color="">Iniciar</ion-button>
+  </form>
+</ion-content>

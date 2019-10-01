@@ -1,0 +1,161 @@
+#unidades-pedidas{
+    --ion-background-color:rgb(211, 195, 186);
+    background-color:rgb(211, 195, 186);
+    border: 2px solid rgb(211, 195, 186);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    --color: var(--ion-text-color,#000);
+    height: 100%;
+ }
+
+ #stock-propio{
+    --ion-background-color:rgb(151, 186, 190);
+    background-color:rgb(151, 186, 190);
+    border: 2px solid rgb(151, 186, 190);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    --color: var(--ion-text-color,#000);
+    height: 100% !important;
+ }
+
+
+ #stock-transito{
+    --ion-background-color:rgb(241, 181, 146);
+    background-color:rgb(241, 181, 146);
+    border: 2px solid rgb(241, 181, 146);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    --color: var(--ion-text-color,#000);
+    height: 100%;
+ }
+
+#stock-corte{
+    --ion-background-color:rgb(230, 169, 39);
+    background-color:rgb(230, 169, 39);
+    border: 2px solid rgb(230, 169, 39);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    --color: var(--ion-text-color,#000);
+    height: 100%;
+ }
+
+ #estado-stock{
+   --ion-background-color:rgb(197, 199, 192);
+   border: 2px solid rgb(197, 199, 192);
+   border-top-left-radius: 5px;
+   border-top-right-radius: 5px;
+   border-bottom-left-radius: 5px;
+   border-bottom-right-radius: 5px;
+   text-align: center;
+   font-size: 14px;
+   font-weight: 500;
+   letter-spacing: .06em;
+   text-transform: uppercase;
+   --color: var(--ion-text-color,#000);
+}
+ 
+#estado-stock-ok{
+   --ion-background-color:rgb(157, 185, 131);
+   border: 2px solid rgb(157, 185, 131);
+   border-top-left-radius: 5px;
+   border-top-right-radius: 5px;
+   border-bottom-left-radius: 5px;
+   border-bottom-right-radius: 5px;
+   text-align: center;
+   font-size: 14px;
+   font-weight: 500;
+   letter-spacing: .06em;
+   text-transform: uppercase;
+   --color: var(--ion-text-color,#000);
+}
+
+#estado-stock-no-ok{
+   --ion-background-color:rgb(226, 96, 73);
+   border: 2px solid rgb(226, 96, 73);
+   border-top-left-radius: 5px;
+   border-top-right-radius: 5px;
+   border-bottom-left-radius: 5px;
+   border-bottom-right-radius: 5px;
+   text-align: center;
+   font-size: 14px;
+   font-weight: 500;
+   letter-spacing: .06em;
+   text-transform: uppercase;
+   --color: var(--ion-text-color,#000);
+}
+
+.producto-modal{
+   font-size: 12px !important;
+}
+
+ionic-selectable-modal-md {
+   font-size: 12px !important;
+}  
+
+ 
+ion-select
+{
+   max-width: 100% !important;
+   width: 100% !important;
+   padding-left: 0;
+   font-size: 12px;
+}
+
+.ionic-selectable {
+   font-size: 12px !important;
+}
+
+ion-select-option{
+   font-size: 12px !important;
+}
+
+.select-option-dinadel{
+   font-size: 12px !important;
+}
+
+.action-sheet-button-inner.sc-ion-action-sheet-md {
+   font-size: 12px !important;
+}
+
+.select-text
+{
+   font-size: 12px !important;
+   white-space: nowrap;
+} 
+
+.alert-radio-label.sc-ion-alert-md{
+   font-size: 10px !important;
+}
+
+.alert-button-inner.sc-ion-alert-md
+{
+   font-size: 10px !important;
+}
