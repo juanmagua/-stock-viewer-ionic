@@ -1,0 +1,8 @@
+{
+  "name": "ConsultaStock",
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
+  "type": "angular"
+}
